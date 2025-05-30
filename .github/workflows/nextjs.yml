@@ -23,7 +23,6 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
 jobs:
   # Build job
   build:
@@ -32,23 +31,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      # --- NEW: Change directory to your frontend subfolder ---
-      - name: Change to frontend directory
-        run: cd frontend
-        # This will make subsequent commands run from the 'frontend' directory
-        # You can also use 'working-directory: frontend' in each step if you prefer,
-        # but 'cd' at the start is often simpler for a sequence of commands.
-      
+      # REMOVE THIS BLOCK - we'll use working-directory on individual steps instead
+      # - name: Set working directory to frontend
+      #   run: |
+      #     echo "CURRENT_WORKING_DIRECTORY=frontend" >> $GITHUB_ENV
+
       - name: Detect package manager
         id: detect-package-manager
+        # --- CRITICAL CHANGE: Run this step directly in the frontend directory ---
+        working-directory: ./frontend 
         run: |
-          # The paths here should be relative to the 'frontend' directory now
-          if [ -f "yarn.lock" ]; then # Removed ${{ github.workspace }}
+          # Now, these paths are correctly relative to 'frontend/'
+          if [ -f "yarn.lock" ]; then # No "frontend/" prefix needed here
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
             echo "runner=yarn" >> $GITHUB_OUTPUT
             exit 0
-          elif [ -f "package.json" ]; then # Removed ${{ github.workspace }}
+          elif [ -f "package.json" ]; then # No "frontend/" prefix needed here
             echo "manager=npm" >> $GITHUB_OUTPUT
             echo "command=ci" >> $GITHUB_OUTPUT
             echo "runner=npx --no-install" >> $GITHUB_OUTPUT
@@ -57,64 +56,43 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          # --- NEW: Specify cache path for frontend's node_modules ---
+          # --- Point cache to frontend's lock file (relative to repo root) ---
           cache-dependency-path: frontend/package-lock.json # Or frontend/yarn.lock
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: next
-          # --- IMPORTANT: Ensure your next.config.js is correctly configured ---
-          # Make sure frontend/next.config.js has:
-          # output: 'export',
-          # basePath: '/shredsite.github.io', (or whatever your repo name is for the project page)
-          # assetPrefix: '/shredsite.github.io/',
-          # images: { unoptimized: true },
-          # This action will handle injecting the basePath if 'static_site_generator: next' is used,
-          # but having it explicit in next.config.js is good practice.
 
       - name: Restore cache
         uses: actions/cache@v4
         with:
           path: |
-            # --- NEW: Point cache to frontend's .next cache ---
+            # --- Point cache to frontend's .next cache (relative to repo root) ---
             frontend/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          # --- NEW: Hash files relative to frontend directory ---
+          # Hash files relative to frontend directory (relative to repo root)
           key: ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json', 'frontend/yarn.lock') }}-${{ hashFiles('frontend/**.[jt]s', 'frontend/**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json', 'frontend/yarn.lock') }}-
 
       - name: Install dependencies
-        # --- NEW: Add working-directory to run command in frontend folder ---
+        # --- Run install inside the frontend directory ---
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ./frontend
         
       - name: Build with Next.js
-        # --- NEW: Add working-directory to run command in frontend folder ---
+        # --- Run build inside the frontend directory ---
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         working-directory: ./frontend
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # --- NEW: Point path to the frontend's 'out' directory ---
-          path: ./frontend/out # This is crucial!
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          # --- CRUCIAL: Point to the 'out' folder inside 'frontend' (relative to repo root) ---
+          path: ./frontend/out
