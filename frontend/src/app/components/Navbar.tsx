@@ -1,52 +1,64 @@
-//components/Navbar.tsx
 'use client';
-import React, { useState } from 'react';
-import Navbuttons from './Navbuttons';
-import Link from "next/link";
-import { useClientMediaQuery } from '@/app/hooks/useClientMediaQuery';
-import Dropdown from './Dropdown'; // Assuming you have a Dropdown component
-import { useOverlay } from '../context/OverlayContext';
-const Navbar = () => {
-  const { showNavbar, setShowNavBar } = useOverlay();
 
-  if (!showNavbar) return null; 
-  const isMobile = useClientMediaQuery('(max-width: 500px)');
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Navbuttons from './Navbuttons';
+import Dropdown from './Dropdown';
+import { useOverlay } from '../context/OverlayContext';
+
+const Navbar = () => {
+  const { showNavbar } = useOverlay();
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
-  const handleMouseEnterBuyNow = () => {
-    setIsDropdownVisible(true);
-  };
+  if (!showNavbar) return null;
 
-  const handleMouseLeaveBuyNow = () => {
-    // Optional: Add a small delay to prevent premature closing
-    setTimeout(() => {
-      setIsDropdownVisible(false);
-    }, 100);
-  };
+  const handleMouseEnterBuyNow = () => setIsDropdownVisible(true);
+  const handleMouseLeaveBuyNow = () => setTimeout(() => setIsDropdownVisible(false), 100);
 
   return (
-    <div className="navbar-container flex justify-center items-center" >
-      <Link href="/" style={{ textDecoration: 'none' }}> {/* Link for the title */}
-        <h1 style={{ color: 'red', fontFamily: 'Z', fontSize: '40px', marginRight: '20px', cursor: 'pointer' }} >
+    <div className="w-full flex flex-col items-center mt-8 px-4 sm:px-6 md:px-8">
+      {/* Logo centered */}
+      <Link href="/" style={{ textDecoration: 'none' }}>
+        <h1
+          className="ml-2 sm:ml-0"
+          style={{
+            color: 'red',
+            fontFamily: 'Z',
+            fontSize: '40px',
+            cursor: 'pointer',
+            marginBottom: "12px"
+          }}
+        >
           Shred The Undead
         </h1>
       </Link>
-      <Navbuttons text="Characters" myStyle={{ color: 'orange' }} href='/characters' />
-      <Navbuttons text="Worlds" myStyle={{ color: 'yellow' }} href='/worlds' />
-      <Navbuttons text="Music" myStyle={{ color: 'lime' }} href='/music' />
-      <Navbuttons text="Games" myStyle={{ color: 'royalblue' }} href='/items' />
-      <Navbuttons text="Upcoming" myStyle={{ color: 'purple' }} href='/upcoming' />
-      <div
-        onMouseEnter={handleMouseEnterBuyNow}
-        onMouseLeave={handleMouseLeaveBuyNow}
-        style={{ position: 'relative' }} // Needed for absolute positioning of the dropdown
-      >
-        <Navbuttons text="Buy Now" myStyle={{ color: 'indigo' }} href='https://store.steampowered.com/app/2484270/Shred_The_Undead/' />
-        {isDropdownVisible && (
-          <div style={{ position: 'absolute', top: '100%', left: 0, zIndex: 10 }}>
-            <Dropdown /> {/* Render your Dropdown component here */}
-          </div>
-        )}
+
+      {/* Always-visible nav buttons */}
+      <div className="flex items-center gap-1 sm:gap-6">
+        <Navbuttons text="Band" myStyle={{ color: 'orange' }} href="/characters" />
+        <Navbuttons text="Music" myStyle={{ color: 'yellow' }} href="/music" />
+         <Navbuttons
+          text="Upcoming"
+          myStyle={{ color: 'lime' }}
+          href="/upcoming"
+   
+        /> 
+        <div
+          onMouseEnter={handleMouseEnterBuyNow}
+          onMouseLeave={handleMouseLeaveBuyNow}
+          style={{ position: 'relative' }}
+        >
+          <Navbuttons
+            text="Store"
+            myStyle={{ color: 'royalblue' }}
+            href="https://store.steampowered.com/app/2484270/Shred_The_Undead/"
+          />
+          {isDropdownVisible && (
+            <div style={{ position: 'absolute', top: '100%', left: 0, zIndex: 10 }}>
+              <Dropdown />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
