@@ -2,14 +2,14 @@
 
 const DumptfPage = () => {
   return (
-<div class="flex flex-col items-center justify-center p-8">
+<div className="flex flex-col items-center justify-center p-8">
   <img
     src="/hopewesow.png"
     alt="Hope We Sow Game Logo"
-    class="max-w-full h-auto mb-6"
+    className="max-w-full h-auto mb-6"
   />
 
-  <div class="max-w-prose text-center text-md text-white">
+  <div className="max-w-prose text-center text-md text-white">
     <p className="mb-4">
       An enchanted Harvest Moon spin-off with a focus in foraging, forming
       bonds, learning about the land around you, and learning about yourself.
