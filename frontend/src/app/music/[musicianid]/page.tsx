@@ -62,8 +62,8 @@ export async function generateStaticParams() {
     }));
 }
 
-const MusicianDetailPage = ({ params }: { params: { musicianid: string } }) => {
-    const { musicianid } = params;
+const MusicianDetailPage = async ({ params }: { params: Promise<{ musicianid: string }> }) => {
+    const { musicianid } = await params;
     const artist = ARTISTS[musicianid]; // Data fetched on the server at build time
 
     if (!artist) {
