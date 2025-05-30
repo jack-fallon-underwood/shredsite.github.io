@@ -18,7 +18,7 @@ const CharacterPage = () => {
     
     { 
       name: 'Sara the Pianist', 
-      description: 'Sara is a brilliant mind with a knack for planning and problem-solving. She’s the band’s tech expert, always looking for ways to enhance their performances. Her special move involves building intricate player pianos mid-performance, creating automated melodies that obliterate undead audiences.' 
+      description: 'Sara is a brilliant mind with a knack for planning and problem-solving. She’s the band’s tech expert, always looking for ways to enhance their performances. Her special move involves building intricate player pianos with automated melodies that obliterate undead audiences.' 
     },
     
     { 

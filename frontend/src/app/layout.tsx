@@ -35,7 +35,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </OverlayProvider>
-        <footer><SocialBar/></footer>
+        <footer className="fixed bottom-0  left-1/2 -translate-x-1/2"><SocialBar/></footer>
         
       </body>
     </html>

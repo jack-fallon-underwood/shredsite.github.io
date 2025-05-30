@@ -4,7 +4,7 @@ import Image from "next/image"; // Import the Image component
 
 const SocialBar = () => { // Renamed the component to SocialBar
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-black px-6">
     <div className="flex justify-center items-center space-x-4 mt-4">
       {/* Instagram */}
       <a href="https://www.instagram.com/shredtheundead/" target="_blank" rel="noopener noreferrer">
@@ -20,7 +20,7 @@ const SocialBar = () => { // Renamed the component to SocialBar
       </a>
     
     </div>
-     <div className="text-xs mt-2">Copyrighted Citizens' Loft Interactive LLC 2024</div>
+     <div className="text-xs mt-2">Citizens' Loft©</div>
      </div>
   );
 };

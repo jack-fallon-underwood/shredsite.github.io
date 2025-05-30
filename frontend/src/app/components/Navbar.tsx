@@ -34,22 +34,22 @@ const Navbar = () => {
       </Link>
 
       {/* Always-visible nav buttons */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-1 sm:gap-6">
         <Navbuttons text="Band" myStyle={{ color: 'orange' }} href="/characters" />
-        <Navbuttons text="Music" myStyle={{ color: 'lime' }} href="/music" />
-        {/* <Navbuttons
+        <Navbuttons text="Music" myStyle={{ color: 'yellow' }} href="/music" />
+         <Navbuttons
           text="Upcoming"
-          myStyle={{ color: 'royalblue' }}
+          myStyle={{ color: 'lime' }}
           href="/upcoming"
-          fontSize="text-4xl text-pink-600"
-        /> */}
+   
+        /> 
         <div
           onMouseEnter={handleMouseEnterBuyNow}
           onMouseLeave={handleMouseLeaveBuyNow}
           style={{ position: 'relative' }}
         >
           <Navbuttons
-            text="Buy Now"
+            text="Store"
             myStyle={{ color: 'royalblue' }}
             href="https://store.steampowered.com/app/2484270/Shred_The_Undead/"
           />

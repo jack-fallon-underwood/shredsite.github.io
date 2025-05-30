@@ -14,10 +14,10 @@ const Home = () => {
    
   {showNavbar && (
     <>
-      <div >
+      <div className="mt-8 md:mt-40">
         
       
-      <div className="aspect-video">
+   <div className="aspect-video max-w-2xl mx-auto">
   <iframe
     className="w-full h-full"
     src="https://www.youtube.com/embed/G2vG_hTqQfo"
