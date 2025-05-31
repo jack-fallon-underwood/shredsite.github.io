@@ -134,21 +134,22 @@ const Overlay: FC<OverlayProps> = () => {
               
            
              </div>
-             <div>
-             {submittedName && (
-                  <div className = "fixed bottom-6 right-40 z-56">
-                    <p className="  relative right-60 top-7 text-lg font-bold  text-white ">
-                        {name}
-                    </p>
-               <button
-  onClick={handleClearCookie}
-  className="  px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded text-sm "
->
-  Reset
-</button></div>
+          <div>
+  {submittedName && (
+    <div className="fixed bottom-[2%] right-[8%] z-56 flex items-end">
+      <p className="mb-2 text-lg font-bold text-white translate-x-[-200%]">
+        {name}
+      </p>
+      <button
+        onClick={handleClearCookie}
+        className="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded text-sm"
+      >
+        Reset
+      </button>
+    </div>
+  )}
+</div>
 
-            )}
-             </div>
         </div>
         
     );
