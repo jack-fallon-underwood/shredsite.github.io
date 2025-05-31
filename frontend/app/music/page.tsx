@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import MusicGrid from '@/app/components/MusicGrid';
+import MusicGrid from '@/components/MusicGrid';
 import Link from 'next/link';
 
 

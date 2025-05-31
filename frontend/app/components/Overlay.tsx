@@ -1,7 +1,7 @@
 // components/initialOverlay.tsx (or just Overlay.tsx as per your import)
 import React, { FC, useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
-import { useOverlay } from '../context/OverlayContext';
+import { useOverlay } from '@/context/OverlayContext';
 
 
 interface OverlayProps {

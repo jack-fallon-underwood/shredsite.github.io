@@ -1,9 +1,9 @@
 'use client'; 
 import Image from "next/image";
 import React from "react";
-import Navbar from "./components/Navbar";
-import Overlay from './components/Overlay';
-import { useOverlay } from './context/OverlayContext';
+import Navbar from "@/components/Navbar";
+import Overlay from '@/components/Overlay';
+import { useOverlay } from '@/context/OverlayContext';
 
 const Home = () => {
   const { showNavbar, setShowNavBar } = useOverlay();

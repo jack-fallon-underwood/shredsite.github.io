@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import Navbar from '../components/Navbar';
-import ImageGallery from '../components/ImageGallery';
+import Navbar from '@/components/Navbar';
+import ImageGallery from '@/components/ImageGallery';
 
 const CharacterPage = () => {
   const images = ['g.jpg', 'd.jpg', 'p.jpg', 'b.jpg'];

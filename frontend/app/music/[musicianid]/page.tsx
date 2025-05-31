@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-import ArtistContent from '@/app/components/ArtistContent'; // Import the new client component
+import ArtistContent from '@/components/ArtistContent'; // Import the new client component
 
 // Define your types and ARTISTS data here or import them from a shared file.
 // ARTISTS data should be available on the server for generateStaticParams.

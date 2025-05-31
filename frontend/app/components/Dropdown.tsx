@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbuttons from './Navbuttons';
+import Navbuttons from '@/components/Navbuttons';
 
 const Dropdown = () => {
   return (

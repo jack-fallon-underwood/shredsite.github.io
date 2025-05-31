@@ -1,4 +1,4 @@
-import styles from './MusicGrid.module.css';
+import styles from '@/MusicGrid.module.css';
 import React from 'react';
 
 interface MusicGridProps {

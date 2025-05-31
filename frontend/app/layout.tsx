@@ -2,10 +2,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { OverlayProvider } from './context/OverlayContext'; 
-import Navbar from './components/Navbar';
-import Overlay from "./components/Overlay";
-import SocialBar from "./components/SocialBar";
+import { OverlayProvider } from '@/context/OverlayContext'; 
+import Navbar from '@/components/Navbar';
+import Overlay from "@/components/Overlay";
+import SocialBar from "@/components/SocialBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

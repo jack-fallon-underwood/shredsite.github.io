@@ -2,8 +2,8 @@
 'use client';
 
 import React from 'react';
-import { useClientMediaQuery } from '@/app/hooks/useClientMediaQuery'; // Keep this import here
-import MusicGrid from '@/app/components/MusicGrid';
+import { useClientMediaQuery } from '@/hooks/useClientMediaQuery'; // Keep this import here
+import MusicGrid from '@/components/MusicGrid';
 
 // Re-declare/import your types and helper components needed by ArtistContent
 // It's good practice to put common types in a shared types file or re-declare them.

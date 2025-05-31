@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Navbuttons from './Navbuttons';
-import Dropdown from './Dropdown';
-import { useOverlay } from '../context/OverlayContext';
+import Navbuttons from '@/components/Navbuttons'; 
+import Dropdown from '@/components/Dropdown';
+import { useOverlay } from '@/context/OverlayContext';
 
 const Navbar = () => {
   const { showNavbar } = useOverlay();

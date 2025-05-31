@@ -2,7 +2,7 @@
 
 @import "tailwindcss";
 
-@config "../../tailwind.config.js";
+@config "../tailwind.config.js";
 :root {
   --background: #000000;
   --foreground: #ffffff;
@@ -34,3 +34,4 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
