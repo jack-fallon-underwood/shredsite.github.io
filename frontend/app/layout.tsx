@@ -6,6 +6,14 @@ import { OverlayProvider } from '@/context/OverlayContext';
 import Navbar from '@/components/Navbar';
 import Overlay from "@/components/Overlay";
 import SocialBar from "@/components/SocialBar";
+import './globals.css';
+import { Press_Start_2P } from 'next/font/google';
+
+
+const pressStart2P = Press_Start_2P({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+     <body
+  className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.className} antialiased`}
+>
                
         <OverlayProvider>
         <Overlay />
