@@ -25,7 +25,7 @@ export default {
             top: 'auto', // Remove top constraint
             bottom: '10px', // Pin to the bottom
             left: '50%',   // Keep horizontally centered
-            transform: 'translateX(-60%)', // Adjust for horizontal centering
+            transform: 'translateX(-90%)', // Adjust for horizontal centering
           },
         },
       },
