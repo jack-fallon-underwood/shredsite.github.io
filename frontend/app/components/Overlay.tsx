@@ -75,8 +75,8 @@ const Overlay: FC<OverlayProps> = () => {
   
 
     return (
-        // Outermost container for the overlay
-        <div className={`fixed inset-0 flex flex-col items-center justify-center z-50 ${submittedName && submittedInstrument ? 'animate-move-to-bottom' : ''}`}>
+         <div>
+             <div className={`fixed inset-0 flex items-center justify-center z-50 ${submittedName && submittedInstrument ? 'animate-move-to-bottom' : ''}`}>
             {/* Conditional rendering for Name input OR Name display + Instrument selection/display */}
             {!submittedName ? (
                 // Name input section
@@ -98,10 +98,8 @@ const Overlay: FC<OverlayProps> = () => {
                 </div>
             ) : (
                 // This block is for when the name IS submitted
-                <div className="flex flex-col items-center justify-center w-full">
-                    <p className=" animate-move-to-corner text-lg font-bold text-white ">
-                        {name}
-                    </p>
+                <div className="flex items-center justify-center w-full">
+                  
 
                     {submittedName && !submittedInstrument && (
                         <div className="flex flex-wrap justify-center">
@@ -112,7 +110,7 @@ const Overlay: FC<OverlayProps> = () => {
                                     src={instrument.src}
                                     alt={instrument.alt}
                                     onClick={() => handSubmitInstrament(instrument.name)}
-                                    className="w-24 h-24 m-4 cursor-pointer"
+                                    className="w-24 h-24 m-2 cursor-pointer"
                                 />
                             ))}
                         </div>
@@ -120,26 +118,39 @@ const Overlay: FC<OverlayProps> = () => {
 
                     
                     {submittedInstrument && (
-                        <img
-                            className="animate-move-to-corner mt-2" // Removed absolute here as it's now relative to the parent fixed overlay
-                            style={{ maxHeight: '10vh' }}
+                      
+                    
+                      <img
+                            className="mt-2" // Removed absolute here as it's now relative to the parent fixed overlay
+                            style={{ maxHeight: '5vh' }}
                             src={instruments.find(i => i.name === instrument)?.src}
                             alt={instrument}
                         />
+                      
                     )}
                 </div>
             )}
 
-            
-            {submittedName && (
-                <button
-                    onClick={handleClearCookie}
-                    className="mt-1 px-1 py-1 bg-red-500 hover:bg-red-700 text-white rounded text-sm"
-                >
-                    Reset
-                </button>
+              
+           
+             </div>
+             <div>
+             {submittedName && (
+                  <div className = "fixed bottom-6 right-40 z-56">
+                    <p className="  relative right-60 top-7 text-lg font-bold  text-white ">
+                        {name}
+                    </p>
+               <button
+  onClick={handleClearCookie}
+  className="  px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded text-sm "
+>
+  Reset
+</button></div>
+
             )}
+             </div>
         </div>
+        
     );
 };
 

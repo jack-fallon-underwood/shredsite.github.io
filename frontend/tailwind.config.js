@@ -23,14 +23,14 @@ export default {
           },
           '100%': {
             top: 'auto', // Remove top constraint
-            bottom: '80px', // Pin to the bottom
+            bottom: '10px', // Pin to the bottom
             left: '50%',   // Keep horizontally centered
-            transform: 'translateX(-50%)', // Adjust for horizontal centering
+            transform: 'translateX(-60%)', // Adjust for horizontal centering
           },
         },
       },
       animation: {
-        'move-to-bottom': 'move-to-bottom 1s forwards', // Renamed animation
+        'move-to-bottom': 'move-to-bottom 0.7s forwards', // Renamed animation
       },
     },
   },

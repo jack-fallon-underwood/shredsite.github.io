@@ -12,9 +12,9 @@ import { Press_Start_2P } from 'next/font/google';
 
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
+  weight: '400',    // <-- add this line explicitly
   display: 'swap',
 });
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -43,7 +43,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </OverlayProvider>
-        <footer className="fixed bottom-0  left-1/2 -translate-x-1/2"><SocialBar/></footer>
+        <footer className="fixed bottom-0  left-1/2 -translate-x-1/2 w-full"><SocialBar/></footer>
         
       </body>
     </html>
