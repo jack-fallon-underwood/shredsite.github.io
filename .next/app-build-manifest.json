@@ -1,0 +1,71 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/chunks/app/_not-found/page-a53f9c2b21587e10.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/css/1f9a475b71aa44b1.css",
+      "static/chunks/874-a8a210c5f4dbfd9d.js",
+      "static/chunks/408-4333562e28c8cebe.js",
+      "static/chunks/app/layout-eb6423c588433cc5.js"
+    ],
+    "/characters/page": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/chunks/app/characters/page-77b737cfe92d7094.js"
+    ],
+    "/music/page": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/chunks/874-a8a210c5f4dbfd9d.js",
+      "static/chunks/app/music/page-ab3ced271c1cf0af.js"
+    ],
+    "/items/page": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/chunks/app/items/page-ecb701469f2efa14.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/chunks/app/page-0433f6c07f5a926a.js"
+    ],
+    "/upcoming/page": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/chunks/app/upcoming/page-9f29e00a0872b498.js"
+    ],
+    "/worlds/page": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/chunks/app/worlds/page-cf30d9274b4cb966.js"
+    ],
+    "/music/[musicianid]/page": [
+      "static/chunks/webpack-60ed60c210eb03b3.js",
+      "static/chunks/4bd1b696-4e9652c179cfcf6a.js",
+      "static/chunks/684-461c553a86561e2a.js",
+      "static/chunks/main-app-d518736dc7af0f47.js",
+      "static/chunks/app/music/[musicianid]/page-3c8d735feef8afee.js"
+    ]
+  }
+}

@@ -29,7 +29,7 @@ coverage/
 .vercel/
 
 # Next.js build
-.next/
+
 
 
 # Common build folders

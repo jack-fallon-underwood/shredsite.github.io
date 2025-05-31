@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/characters/page": "/characters",
+  "/music/page": "/music",
+  "/items/page": "/items",
+  "/page": "/",
+  "/upcoming/page": "/upcoming",
+  "/worlds/page": "/worlds",
+  "/music/[musicianid]/page": "/music/[musicianid]"
+}
