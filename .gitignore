@@ -30,7 +30,7 @@ coverage/
 
 # Next.js build
 .next/
-out/
+
 
 # Common build folders
 build/
