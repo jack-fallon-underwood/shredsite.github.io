@@ -107,7 +107,7 @@ const Overlay: FC<OverlayProps> = () => {
                         <div className="flex flex-wrap justify-center">
                             {instruments.map((instrument) => (
                                 <img
-                                    style={{ maxWidth: '10vh' }}
+                                    style={{ maxWidth: '10vh', maxHeight: '10vh' }}
                                     key={instrument.name}
                                     src={instrument.src}
                                     alt={instrument.alt}
