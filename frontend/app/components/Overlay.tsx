@@ -85,6 +85,7 @@ const Overlay: FC<OverlayProps> = () => {
                     <input
                         type="text"
                         value={name}
+                        maxLength={12}
                         onChange={(e) => setName(e.target.value)}
                         onKeyDown={handleEnter}
                         className="border-4 border-white p-2 rounded text-center text-white" // Added text-black for visibility
@@ -122,7 +123,7 @@ const Overlay: FC<OverlayProps> = () => {
                     
                       <img
                             className="mt-2" // Removed absolute here as it's now relative to the parent fixed overlay
-                            style={{ maxHeight: '5vh' }}
+                            style={{ maxHeight: '7vh' }}
                             src={instruments.find(i => i.name === instrument)?.src}
                             alt={instrument}
                         />
@@ -142,7 +143,7 @@ const Overlay: FC<OverlayProps> = () => {
       </p>
       <button
         onClick={handleClearCookie}
-        className="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded text-sm"
+        className="hidden sm:block px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded text-sm"
       >
         Reset
       </button>
