@@ -49,7 +49,7 @@ const ARTISTS: Record<string, ArtistData> = {
     '4': {
         name: '',
         imageSrc: '/kamen2.jpg',
-        bio: 'Kamen Ross is a composer, producer, arranger, vocalist, and multi-instrumentalist from Colorado who has contributed to the publication of over 300 original songs and countless re-imaginings performed all over the world, taking inspiration primarily from an affinity with sounds found in the wilderness',
+        bio: 'Kamen Ross is a composer, producer, arranger, vocalist, and multi-instrumentalist from Colorado who has contributed to the publication of over 300 original songs and countless re-imaginings performed all over the world, taking inspiration from the wilderness!',
         albumIds: ['3017108498', '4117570235'],
         externalLinks: [{ link: 'https://kamenross.com', imageSrc: '/k1.jpg' }, { link: 'https://sexycoyote.com', imageSrc: '/k4.jpg' }, { link: 'https://rogozo.bandcamp.com/', imageSrc: '/k5.jpg' }, { link: 'https://osoroso.bandcamp.com/', imageSrc: '/k6.jpg' }, { link: 'https://kingsorceress.com', imageSrc: '/k7.jpg' }]
     }

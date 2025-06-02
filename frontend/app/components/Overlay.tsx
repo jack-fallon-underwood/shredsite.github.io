@@ -79,25 +79,29 @@ const Overlay: FC<OverlayProps> = () => {
              <div className={`fixed inset-0 flex items-center justify-center z-50 ${submittedName && submittedInstrument ? 'animate-move-to-bottom' : ''}`}>
             {/* Conditional rendering for Name input OR Name display + Instrument selection/display */}
             {!submittedName ? (
-                // Name input section
-                <div className="flex flex-col items-center justify-center p-4">
-                    <p className="p-2 text-white">Enter your name:</p> {/* Added text-white for visibility */}
-                    <input
-                        type="text"
-                        value={name}
-                        maxLength={12}
-                        onChange={(e) => setName(e.target.value)}
-                        onKeyDown={handleEnter}
-                        className="border-4 border-white p-2 rounded text-center text-white" // Added text-black for visibility
-                    />
-                    <button
-                        onClick={() => handleSubmitName(name)}
-                        className="mt-2 px-3 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
-                    >
-                        Submit
-                    </button>
-                </div>
-            ) : (
+  <>
+    {/* Desktop & tablet input */}
+    <div className="hidden sm:flex flex-col items-center justify-center p-4">
+      <p className="p-2 text-white">Enter your name:</p>
+      <input
+        type="text"
+        value={name}
+        maxLength={12}
+        onChange={(e) => setName(e.target.value)}
+        onKeyDown={handleEnter}
+        className="border-4 border-white p-2 rounded text-center text-white"
+      />
+      <button
+        onClick={() => handleSubmitName(name)}
+        className="mt-2 px-3 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
+      >
+        Submit
+      </button>
+    </div>
+
+   
+  </>
+) : (
                 // This block is for when the name IS submitted
                 <div className="flex items-center justify-center w-full">
                   

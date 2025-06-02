@@ -12,20 +12,20 @@ const MusicPage = () => {
   return (
     <div style={{ backgroundColor: 'black', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'white', padding: '20px', }}>
 
-      <div style={{ marginTop: '0%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <h1 style={{ marginBottom: '20px'  }}>Soundtrack Performers</h1>
-      </div>
+      <div className="mt-0 flex justify-center items-center">
+  <h1 className="mb-5 text-center text-md sm:text-xl font-bold whitespace-nowrap text-white">
+    Soundtrack Performers
+  </h1>
+</div>
       <MusicGrid>
         {albumRoutes.map((route, index) => (
           <Link key={index} href={route} style={{ display: 'block', width: '100%', height: '50%' }}>
             <div style={{
-              border: '1px solid #ccc',
-              display: 'flex',
+     
               justifyContent: 'center',
               alignItems: 'center',
               textAlign: 'center',
-              margin: '0px',
-              padding: '8px',
+
               width: '100%',
             
             }}>
