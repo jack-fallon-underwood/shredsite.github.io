@@ -17,15 +17,17 @@ const MusicPage = () => {
     Soundtrack Performers
   </h1>
 </div>
-      <MusicGrid>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-xl mx-auto">
         {albumRoutes.map((route, index) => (
           <Link key={index} href={route} style={{ display: 'block', width: '100%', height: '50%' }}>
             <div style={{
-     
+              border: '1px solid #ccc',
+              display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               textAlign: 'center',
-
+              margin: '0px',
+              padding: '8px',
               width: '100%',
             
             }}>
@@ -35,7 +37,7 @@ const MusicPage = () => {
             </div>
           </Link>
         ))}
-      </MusicGrid>
+     </div>
     </div>
   );
 };
