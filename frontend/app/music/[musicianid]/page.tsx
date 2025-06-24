@@ -3,10 +3,18 @@
 
 import React from 'react';
 
-import ArtistContent from '@/components/ArtistContent'; // Import the new client component
+import ArtistContent from '@/components/ArtistDiscography'; // Import the new client component
 
 // Define your types and ARTISTS data here or import them from a shared file.
 // ARTISTS data should be available on the server for generateStaticParams.
+
+interface ReleaseData{
+    artistId?: number;
+    releaseDate?: Date;
+    featured?: boolean;
+
+}
+
 interface ArtistLinks {
     imageSrc: string;
     link: string;
@@ -20,9 +28,11 @@ interface ArtistData {
     singleIds?: string[];
     homebase?: string[];
     genretag?: string[];
+    type?: string[];
     memberArtists?: string[];
     associateArtist?: string[];
     externalLinks?: ArtistLinks[];
+    artistId?: number;
 }
 
 const ARTISTS: Record<string, ArtistData> = {
@@ -73,14 +83,71 @@ const MusicianDetailPage = async ({ params }: { params: Promise<{ musicianid: st
             </div>
         );
     }
+return (
+  <div style={{ color: 'white', padding: '2rem' }}>
+    {/* Flex row with artist photo and dummy album */}
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '2rem',
+      }}
+    >
+      <img
+        src={artist.imageSrc}
+        alt={`${artist.name} photo`}
+        style={{ width: '250px', height: '250px', objectFit: 'cover', borderRadius: '0.5rem' }}
+      />
+      {artist.albumIds?.length > 0 && (
+        <iframe
+          style={{ border: 0, width: '400px', height: '472px' }}
+          src={`https://bandcamp.com/EmbeddedPlayer/album=${artist.albumIds[0]}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/`}
+          seamless
+        >
+          <a href={`https://bandcamp.com/album?id=${artist.albumIds[0]}`}>Listen on Bandcamp</a>
+        </iframe>
+      )}
+    </div>
 
-    return (
-        <div style={{ backgroundColor: 'black', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'white' }}>
-            <h1 className="mb-4">{artist.name}</h1>
-            {/* Render the Client Component here, passing the artist data as a prop */}
-            <ArtistContent artist={artist} />
-        </div>
-    );
+    {/* Bio below, centered and black text */}
+    <div
+      style={{
+        marginTop: '2rem',
+        color: 'black',
+        textAlign: 'center',
+        maxWidth: '600px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      }}
+    >
+      <p>{artist.bio}</p>
+    </div>
+
+    {/* Full width YouTube embed - TODO: Modularize this component later */}
+    <div style={{ marginTop: '2rem', width: '100%', maxWidth: '960px', marginLeft: 'auto', marginRight: 'auto' }}>
+      <iframe
+        width="100%"
+        height="360"
+        src="https://www.youtube.com/embed/qeBNuCYWd4k"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+
+    {/* Artist content/discography below */}
+    <div style={{ marginTop: '3rem' }}>
+      <ArtistContent artist={artist} />
+    </div>
+  </div>
+);
+
+
+
+
 };
 
 export default MusicianDetailPage;

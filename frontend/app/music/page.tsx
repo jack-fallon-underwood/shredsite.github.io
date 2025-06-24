@@ -10,7 +10,7 @@ const MusicPage = () => {
   const imageSources = ['/jack.png', '/ben2.jpg', '/ian.jpg', '/kamen2.jpg']; // Replace with your actual image paths
   
   return (
-    <div style={{ backgroundColor: 'black', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'white', padding: '20px', }}>
+    <div style={{  minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'white', padding: '20px', }}>
 
       <div className="mt-0 flex justify-center items-center">
   <h1 className="mb-5 text-center text-md sm:text-xl font-bold whitespace-nowrap text-white">

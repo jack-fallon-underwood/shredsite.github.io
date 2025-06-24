@@ -38,11 +38,10 @@ export default function RootLayout({
   className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.className} antialiased pb-26`}
 >
                
-        <OverlayProvider>
-        <Overlay />
+    
           <Navbar />
           {children}
-        </OverlayProvider>
+     
         <footer className="fixed bottom-0  left-1/2 -translate-x-1/2 w-full"><SocialBar/></footer>
         
       </body>
