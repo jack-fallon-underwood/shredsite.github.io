@@ -16,3 +16,6 @@ steps:
       '--region', 'northamerica-northeast2',  # Replace with your desired region
       '--allow-unauthenticated'  # Optional: Remove if you want to restrict access
     ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
