@@ -30,7 +30,7 @@ An enchanted Harvest Moon spin-off that delves deeper into the essence of nature
 
 Imagine a world where your focus isn't just on farming, but on foraging, forming deep bonds with the land and its inhabitants, and truly learning about yourself in the process.
 
-Meet Micah and Mattie: Twins who have bravely escaped a toxic home life, they embark on a journey to a rumored community where individuals seek to start anew and live harmoniously amongst nature. Join them as they navigate their new lives, forge connections, and uncover the mysteries of the land.
+Meet Micah and Mattie: Twins who have bravely escaped a toxic home life, they embark on a journey to a rumored community where individuals seek to start anew and live harmoniously amongst nature. Join them as they navigate their new lives, forge connections, and uncover the mysterys of the land.
 
 ---
 
