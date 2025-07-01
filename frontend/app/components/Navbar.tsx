@@ -27,7 +27,7 @@ const Navbar = () => {
           className="ml-2 sm:ml-0"
           style={{
             color: 'red',
-            fontSize: '40px',
+            fontSize: '20px',
             cursor: 'pointer',
             marginBottom: '12px',
           }}
