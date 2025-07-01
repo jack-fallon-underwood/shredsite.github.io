@@ -13,7 +13,7 @@ steps:
       'run', 'deploy', 'frontend-service',  # Replace with your desired service name
       '--image', 'gcr.io/peppy-archive-464519-f3/frontend-image',
       '--platform', 'managed',
-      '--region', 'us-east4',  # Change to a different region
+      '--region', 'us-west2',  # Change to a different region
       '--allow-unauthenticated'  # Optional: Remove if you want to restrict access
     ]
 
