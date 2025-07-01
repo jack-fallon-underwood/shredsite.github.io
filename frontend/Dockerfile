@@ -19,8 +19,8 @@ RUN npm run build  # Adjust this if your build command is different
 # Step 2: Serve the application
 FROM nginx:alpine
 
-# Copy the build output to the Nginx HTML directory
-COPY --from=build /app/build /usr/share/nginx/html
+# Copy the Next.js output to the Nginx HTML directory
+COPY --from=build /app/.next /usr/share/nginx/html
 
 # Expose the port that Nginx will run on
 EXPOSE 80
