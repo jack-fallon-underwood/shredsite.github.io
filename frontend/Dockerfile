@@ -2,7 +2,7 @@
 FROM node:22.13.1 AS build
 
 # Set the working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and package-lock.json (if available)
 COPY package*.json ./
@@ -20,7 +20,7 @@ RUN npm run build  # Adjust this if your build command is different
 FROM nginx:alpine
 
 # Copy the build output to the Nginx HTML directory
-COPY --from=build /usr/src/app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose the port that Nginx will run on
 EXPOSE 80
