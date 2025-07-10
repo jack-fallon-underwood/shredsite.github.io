@@ -24,7 +24,7 @@ const Home = () => {
         {showNavbar && (
           <>
             {/* Mission Statement */}
-            <div className="text-center px-4 mt-10">
+            <div className="text-center px-4 mt-5">
               <p className="text-black text-lg sm:text-xl font-medium max-w-3xl mx-auto">
                 Citizens' Loft is an organization dedicated to the creation, cultivation, dissemination, and promotion of musical and artistic expressions.
               </p>
