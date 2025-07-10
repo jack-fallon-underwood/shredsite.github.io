@@ -38,12 +38,21 @@ const Navbar = () => {
 
       {/* Navigation buttons */}
       <div className="flex items-center gap-1 sm:gap-6 relative">
-        <Navbuttons text="Events" myStyle={{ color: 'orange' }} href="/events" />
-        <Navbuttons text="Artists" myStyle={{ color: 'yellow' }} href="/music" />
-        <Navbuttons text="The Archive" myStyle={{ color: 'lime' }} href="/archive" />
+        <Navbuttons text="Events" myStyle={{ color: 'red' }} href="/events" />
+        <Navbuttons text="Artists" myStyle={{ color: 'orange' }} href="/music" />
+         <Navbuttons
+          text="Music"
+          myStyle={{ color: 'limegreen' }}
+          href="https://citizensloft.bandcamp.com/merch"
+        />
+         <Navbuttons
+          text="Films"
+          myStyle={{ color: 'royalblue' }}
+          href="https://citizensloft.bandcamp.com/video"
+        />
         <Navbuttons
           text="Merch"
-          myStyle={{ color: 'royalblue' }}
+          myStyle={{ color: 'purple' }}
           href="https://citizensloft.bandcamp.com/merch"
         />
 
@@ -53,7 +62,7 @@ const Navbar = () => {
           onMouseLeave={() => setServicesOpen(false)}
           className="relative"
         >
-          <Navbuttons text="Services" myStyle={{ color: 'pink' }} href="/services" />
+          <Navbuttons text="Services" myStyle={{ color: 'black' }} href="/services" />
           {servicesOpen && <Dropdown items={servicesMenuItems} />}
         </div>
 
