@@ -47,8 +47,8 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="sm:hidden flex flex-col items-center mt-4 space-y-2">
           <Navbuttons text="Events" myStyle={{ color: 'red' }} href="/events" />
-          <Navbuttons text="Artists" myStyle={{ color: 'orange' }} href="/music" />
-          <Navbuttons text="Music" myStyle={{ color: 'limegreen' }} href="https://citizensloft.bandcamp.com/merch" />
+          <Navbuttons text="Artists" myStyle={{ color: 'orange' }} href="https://citizensloft.bandcamp.com/artists" />
+          <Navbuttons text="Music" myStyle={{ color: 'limegreen' }} href="https://citizensloft.bandcamp.com/music" />
           <Navbuttons text="Films" myStyle={{ color: 'royalblue' }} href="https://citizensloft.bandcamp.com/video" />
           <Navbuttons text="Merch" myStyle={{ color: 'purple' }} href="https://citizensloft.bandcamp.com/merch" />
           <Navbuttons text="Services" myStyle={{ color: 'black' }} href="/services" />
