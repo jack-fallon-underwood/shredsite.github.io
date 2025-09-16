@@ -20,8 +20,8 @@ const Home = () => {
    <div className="aspect-video max-w-2xl mx-auto">
   <iframe
     className="w-full h-full"
-    src="https://www.youtube.com/embed/G2vG_hTqQfo"
-    title="YouTube video"
+    src="https://www.youtube.com/embed/r5RxpVab3XU"
+    title="YouTube Trailer"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowFullScreen
   ></iframe>
