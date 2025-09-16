@@ -34,7 +34,7 @@ const ARTISTS: Record<string, ArtistData> = {
     },
     '2': {
         name: '',
-        imageSrc: '/ben.png',
+        imageSrc: '/ben2.jpg',
         bio: "Benjamin DeUrso is a musician, archivist, percussionist and the reason we all know each other. Focusing on recording drums, producing shows, and producing music through Citizens' Loft, it's rare to find him outside of a musical context, unless he's relaxing in his hometown of Somers, New York.",
         albumIds: ['2270247403', '4265531398', '1955134798', '3871796258', '2761052191', '632246931', '1778625599'],
         singleIds: ['3449032665', '2502173971', '2323749030', '665717195', '1284299913']
@@ -48,8 +48,8 @@ const ARTISTS: Record<string, ArtistData> = {
     },
     '4': {
         name: '',
-        imageSrc: '/kamen.jpg',
-        bio: 'Kamen Ross is a composer, producer, arranger, vocalist, and multi-instrumentalist from Colorado who has contributed to the publication of over 300 original songs and countless re-imaginings performed all over the world, taking inspiration primarily from an affinity with sounds found in the wilderness',
+        imageSrc: '/kamen2.jpg',
+        bio: 'Kamen Ross is a composer, producer, arranger, vocalist, and multi-instrumentalist from Colorado who has contributed to the publication of over 300 original songs and countless re-imaginings performed all over the world, taking inspiration from the wilderness!',
         albumIds: ['3017108498', '4117570235'],
         externalLinks: [{ link: 'https://kamenross.com', imageSrc: '/k1.jpg' }, { link: 'https://sexycoyote.com', imageSrc: '/k4.jpg' }, { link: 'https://rogozo.bandcamp.com/', imageSrc: '/k5.jpg' }, { link: 'https://osoroso.bandcamp.com/', imageSrc: '/k6.jpg' }, { link: 'https://kingsorceress.com', imageSrc: '/k7.jpg' }]
     }

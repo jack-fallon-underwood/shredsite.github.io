@@ -12,10 +12,12 @@ const MusicPage = () => {
   return (
     <div style={{ backgroundColor: 'black', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'white', padding: '20px', }}>
 
-      <div style={{ marginTop: '0%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <h1 style={{ marginBottom: '20px'  }}>Soundtrack Performers</h1>
-      </div>
-      <MusicGrid>
+      <div className="mt-0 flex justify-center items-center">
+  <h1 className="mb-5 text-center text-md sm:text-xl font-bold whitespace-nowrap text-white">
+    Soundtrack Performers
+  </h1>
+</div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-xl mx-auto">
         {albumRoutes.map((route, index) => (
           <Link key={index} href={route} style={{ display: 'block', width: '100%', height: '50%' }}>
             <div style={{
@@ -35,7 +37,7 @@ const MusicPage = () => {
             </div>
           </Link>
         ))}
-      </MusicGrid>
+     </div>
     </div>
   );
 };

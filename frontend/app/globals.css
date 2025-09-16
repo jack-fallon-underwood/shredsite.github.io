@@ -35,3 +35,6 @@ body {
   font-style: normal;
 }
 
+:root {
+  --move-bottom-distance: 80px; /* Adjust this to move both animations */
+}

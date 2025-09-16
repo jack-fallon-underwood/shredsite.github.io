@@ -21,100 +21,55 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, characterInfo }) =>
   const currentCharacter = focusedImage !== null ? characterInfo[focusedImage] : null;
 
   return (
-    <div className="flex justify-center gap-7 sm:gap-5 flex-wrap">
-      {images.map((img, index) => (
-        <div
-          key={index}
-          onClick={() => handleImageClick(index)}
-          style={{
-            cursor: 'pointer',
-            position: 'relative',
-          }}
-        >
-             <img
-            src={`/${img}`}
-            alt={`Character ${index + 1}`}
-            className={`
-              max-w-[100px] sm:max-w-[300px]   // <--- CHANGE HERE
-              h-auto border-2 border-white rounded-lg
-              transition-transform duration-200 ease-in-out
-              ${focusedImage === index ? 'scale-125 shadow-md shadow-white/70' : 'scale-100'}
-            `}
-          />
-        </div>
-      ))}
-
-      {/* This is the REVISED part.
-        The overlay now renders ONLY if focusedImage is NOT null (meaning *any* image is focused),
-        and it is outside the map loop, so it's a single, global overlay.
-      */}
-      {focusedImage !== null && currentCharacter && (
-        <div
-          onClick={handleCloseFocus}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.8)', // Changed from 0.7 for consistency
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 51,
-            cursor: 'pointer', // Added cursor back for visual feedback
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              backgroundColor: 'black',
-              borderRadius: '8px',
-              padding: '20px',
-              maxWidth: '80%',
-              maxHeight: '80%',
-              overflowY: 'auto',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '20px',
-              position: 'relative',
-            }}
-          >
-            <img
-              src={`/${images[focusedImage]}`} // Use focusedImage directly for src
-              alt={`Character ${focusedImage + 1}`}
-              style={{
-                maxWidth: '400px',
-                height: 'auto',
-                border: '2px solid white',
-                borderRadius: '8px',
-              }}
-            />
-            <div style={{color: 'white', textAlign: 'center'}}> {/* Added color here */}
-              <h2 style={{ fontSize: '24px' }}>{currentCharacter.name}</h2>
-              <p style={{ fontSize: '16px', marginTop: '10px' }}>{currentCharacter.description}</p>
-            </div>
-              <button
-                className= "  focus:ring-2   font-bold "
-                  onClick={handleCloseFocus}
-                  style={{
-                    position: 'absolute',
-                    top: '10px',
-                    right: '10px',
-                    color: 'white',
-                    background: 'black',
-                    border: 'none',
-                    fontSize: '40px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  ✕
-                </button>
-          </div>
-        </div>
-      )}
+   <div className="flex justify-center gap-4 sm:gap-6 flex-wrap px-2">
+  {images.map((img, index) => (
+    <div
+      key={index}
+      onClick={() => handleImageClick(index)}
+      className="cursor-pointer relative"
+    >
+      <img
+        src={`/${img}`}
+        alt={`Character ${index + 1}`}
+        className={`
+          w-24 sm:w-40 md:w-56
+          h-auto border-2 border-white rounded-lg
+          transition-transform duration-200 ease-in-out
+          ${focusedImage === index ? 'scale-110 shadow-md shadow-white/70' : 'scale-100'}
+        `}
+      />
     </div>
+  ))}
+
+  {focusedImage !== null && currentCharacter && (
+    <div
+      onClick={handleCloseFocus}
+      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-black rounded-lg p-4 max-w-[90%] max-h-[90%] overflow-y-auto flex flex-col items-center gap-4 relative"
+      >
+        <img
+          src={`/${images[focusedImage]}`}
+          alt={`Character ${focusedImage + 1}`}
+          className="max-w-full sm:max-w-[300px] border-2 border-white rounded"
+        />
+        <div className="text-white text-center">
+          <h2 className="text-xl font-bold">{currentCharacter.name}</h2>
+          <p className="text-sm mt-2">{currentCharacter.description}</p>
+        </div>
+        <button
+          onClick={handleCloseFocus}
+          className="absolute top-2 right-2 text-white bg-black text-3xl font-bold leading-none"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+  )}
+</div>
+
   );
 };
 
