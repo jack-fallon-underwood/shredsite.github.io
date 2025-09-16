@@ -27,7 +27,7 @@ const Button: FC<ButtonProps> = ({
   fontSize = "text-base",
 }) => {
   const hoverClass = href ? "hover:text-black-500" : "";
-  const buttonClasses = `btn-${variant} border-1 border-white ${hoverClass} ${fontSize} cursor-pointer`;
+  const buttonClasses = `btn-${variant} border-1  border-gray-700 ${hoverClass} ${fontSize} cursor-pointer`;
 
   return (
     <>
