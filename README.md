@@ -6,13 +6,16 @@ This repository hosts the code for my portfolio website, designed to showcase my
 
 ## About This Site
 
-This website serves two primary functions:
+This website serves three primary functions:
 
 ### Web Development Portfolio
 It highlights my capabilities as a web developer, featuring projects, technologies I'm proficient in, and demonstrating my approach to building engaging and functional web experiences.
 
 ### "Shred The Undead" Homepage
 It's the official online home for "Shred The Undead," providing an introduction to the game's characters, the musicians who worked on the soundtrack, and the game's external links.
+
+### "Citizens' Loft" Homepage
+Using the same infastructure as Shred The Undead, the Citizens' Loft homepage can be found on /FensOnFire branch, while the Shred content is found on /TheKinks. Citizens' Loft is a record label and production company I co-founded.
 
 ---
 
